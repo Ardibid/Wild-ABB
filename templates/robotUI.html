@@ -1,0 +1,106 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="{% static 'jquery-1.11.3.min.js' %}"></script>
+    <!-- <script src="\static\drawingManagement.js"></script> -->
+    <title>Wild ABB</title>
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+                oveflow: hidden;
+            }
+            canvas {
+                width : 100%;
+                height: 100%;
+            }
+
+            p {
+                font-family: Arial;
+                font-size: 12px;
+            }
+
+            #GUI{
+                font-size: 18px;
+                }
+            .container {
+                width: 100%;
+                display: flex;
+            }
+            #robotView {
+                float: left;
+                flex:1;
+            }
+            #editor {
+                float: left;
+                color: white;
+                background-color: black;
+                flex:1;
+                padding: 10px;
+            }
+            #clear {
+                clear: both;
+            }
+
+
+            tr{
+                width: 100%;
+            }
+            td {
+                align-content: center;
+                width: 40%;
+                height:auto;
+            }
+
+            #markUpTable{
+                max-width: 100%;
+                border: 10px;
+                height: auto;
+                width: auto;
+            }
+
+            #sensorImage  {
+                filter: grayscale(100%);
+                max-width: 50%;
+                border: 10px;
+                height: auto;
+                width: auto;
+            }
+            #sensorTag{
+                font-family: Arial;
+                font-size: 12px;
+                font-weight:bold;
+            }
+
+    </style>
+</head>
+
+<body onload="readRobot();">
+    <div class= "container">
+        <div id="editor">
+            <p id="GUI"> Detected Flaws:</p>
+            <table id= "markUpTable">
+            </table>
+            <p id="GUI"> Detailes Frames:</p>
+            <table id= "imageTable">
+            </table>
+        </div>
+        <div id="robotView">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script src="\static\OBJLoader.js"></script>
+            <script src="\static\three.js"></script>
+            <script src="\static\OrbitControls.js"></script>
+            <script src="\static\dat.gui.min.js"></script>
+            <script src="\static\main.js"></script>
+        </div>
+
+    </div>
+    <div id="clear">
+    <p align="center"> Ardavan Bidgoli | abidgoli@andrew.cmu.edu | 12-780 Final Project </p>
+</div>
+    </body>
+</html>
